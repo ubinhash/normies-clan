@@ -1,16 +1,11 @@
 # The Norm of Normies
 
-Hackathon project for [Normies](https://normies.art) — a 10,000-piece on-chain 40×40 pixel NFT collection. Two tools built around **pixel Hamming distance** (count of differing pixels):
+I've built 1)a game and a 2) a tool for normies that plays with the normies **pixel Hamming distance** (count of differing pixels):
 
-1. **Clan War** — a fully on-chain red vs blue game where clans compete on pixel similarity
-2. **Similar Normies Search** — explore the collection by pixel similarity, with a draw-your-own query mode
+1. **Clan War (Game)** — a fully on-chain red vs blue game where the goal is to minimize pixel distance between members within the clans.
+2. **Similar Normies Search (Tool)** — find similar normies by pixel similarity, with a draw-your-own normie query mode
 
-**Live app:** [normies-clan.vercel.app](https://normies-clan.vercel.app/) · local dev in [Setup](#setup)
-
-| Tab | Route |
-|-----|-------|
-| Clan War | `/` |
-| Similar Normies Search | `/archive/tree` |
+** 🔗Live app:** [normies-clan.vercel.app](https://normies-clan.vercel.app/) 
 
 ---
 
@@ -111,41 +106,7 @@ Base URL: **`https://api.normies.art`**
 | Bundled `pixels-diff.json` | Optional customized-pixel search mode |
 | Bundled `traits.json` | Type / gender filters and trait panels |
 
-API docs reference: [`llm.txt`](llm.txt)
 
----
-
-## Setup
-
-### Frontend
-
-```bash
-cd frontend
-cp .env.example .env
-npm install
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000).
-
-**Environment** (`frontend/.env`):
-
-| Variable | Purpose |
-|----------|---------|
-| `NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID` | RainbowKit / WalletConnect |
-| `NEXT_PUBLIC_MAINNET_RPC_URL` | Ethereum RPC (default: public node) |
-| `NEXT_PUBLIC_CLAN_WAR_ADDRESS` | Clan War proxy (defaults to mainnet) |
-
-### Contracts (optional — deploy / upgrade)
-
-```bash
-cd contracts
-cp .env.example .env   # set PRIVATE_KEY, ETHERSCAN_API_KEY, etc.
-npm install
-npx hardhat test
-```
-
-See [`contracts/.env.example`](contracts/.env.example) for deploy and upgrade variables.
 
 ---
 
