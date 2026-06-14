@@ -5,8 +5,7 @@ I've built 1) a game and a 2) a tool for normies that plays with the normies pix
 1. **Clan War (Game)** — a fully on-chain red vs blue game where clans compete on pixel similarity
 2. **Similar Normies Search (Tool)** — explore the collection by pixel similarity, with a draw-your-own query mode
 
-**Live app:** [normies-clan.vercel.app](https://normies-clan.vercel.app/) · local dev in [Setup](#setup)
-
+**Live app:** [normies-clan.vercel.app](https://normies-clan.vercel.app/) 
 
 ---
 
@@ -27,6 +26,8 @@ The clan with the **most visually similar set of Normies** (lowest average pairw
 Because the goal is overall **visual coherence**, any player can strategically enlist or evict "outlier" Normies — in their own clan or an opponent's — to shift the average score.
 
 Our game contract reads pixel data directly from Normies' on-chain **NormiesStorage** (raw 40×40 bitmap) and **transformed / canvas storage** (customization XOR layer when a Normie has been edited).
+
+![Clan War](screenshots/4.png)
 
 ### Rules
 
@@ -83,11 +84,17 @@ Search runs over all 10,000 Normies using precomputed Hamming distance. As a sid
 
 **Search by token ID** — enter a Normie # and see the closest matches in the full collection.
 
+![Similar Normies — search by token ID](screenshots/1.png)
+
 **Draw your own** — use the 40×40 pixel grid editor (pen / eraser) to sketch a face, then search for normies with the smallest Hamming distance to your drawing.
+
+![Similar Normies — draw to search](screenshots/3.png)
 
 **Filters** — narrow results by trait (type, gender) when trait metadata is loaded.
 
 **Pixel diff view** — toggle per-pixel diff charts between your query and each result.
+
+![Similar Normies — pixel diff](screenshots/2.png)
 
 **Pixel source toggle** — compare against **original** on-chain pixels or **customized** (composited) pixels.
 
